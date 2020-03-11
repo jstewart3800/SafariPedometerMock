@@ -1,0 +1,7 @@
+{
+  "name": "SafariPedometerPractice",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
