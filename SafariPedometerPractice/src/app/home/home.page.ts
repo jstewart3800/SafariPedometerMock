@@ -20,7 +20,7 @@ export class HomePage {
      constructor(public pedometer: Pedometer) { }
 
      pedo2() {
-          Pedometer.startPedometerUpdates(this.successHandler, onerror)
+          this.pedometer.startPedometerUpdates()
                .subscribe((data: IPedometerData) => {
                     console.log(data);
                });
