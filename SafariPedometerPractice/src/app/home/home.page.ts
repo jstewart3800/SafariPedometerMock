@@ -11,18 +11,24 @@ export class HomePage {
      successHandler = function (pedometerData) {
           // pedometerData.startDate; -> ms since 1970
           // pedometerData.endDate; -> ms since 1970
-          pedometerData.numberOfSteps;
+          // pedometerData.numberOfSteps;
           // pedometerData.distance;
           // pedometerData.floorsAscended;
           // pedometerData.floorsDescended;
      };
 
-     constructor(public pedometer: Pedometer) { }
+     constructor(public pedometer: Pedometer) {
+          this.pedo2();
+     }
 
      pedo2() {
           this.pedometer.startPedometerUpdates()
                .subscribe((data: IPedometerData) => {
-                    console.log(data);
+                    console.log(data.numberOfSteps);
+                    if(data.numberOfSteps === 15)
+                    {
+                         alert("You have taken 15 steps!");
+                    }
                });
      }
 
